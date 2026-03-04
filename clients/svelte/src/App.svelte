@@ -58,10 +58,20 @@
 </script>
 
 {#if !connected}
-  <h2>Enter your name</h2>
-  <input bind:value={name} />
-  <button on:click={connect} disabled={!name}>Join</button>
+<div class="has-text-centered">
+  <div class="field block">
+    <div class="control has-icons-left has-icons-right">
+    <input class="input is-success is-large is-rounded" placeholder="Enter your name" bind:value={name} />
+      <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+      </span>
+    </div>
 
+    
+  </div>
+  <button class="button is-large is-rounded" on:click={connect} disabled={!name}>Join</button>
+
+</div>
 {:else if status === "waiting"}
   <h2>⏳ Waiting for second player...</h2>
   <ul>
@@ -89,11 +99,11 @@
 
   <div class="board">
     {#each board as cell, i}
-      <button
+      <button class="box"
         on:click={() => move(i)}
         disabled={cell || status !== "playing"}
       >
-        {cell}
+        {cell  ? cell : ''}
       </button>
     {/each}
   </div>
