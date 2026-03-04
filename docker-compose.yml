@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+  vue-client:
+    build: ./clients/vue
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./clients/vue:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  # svelte-client:
+  #   build: ./clients/svelte
+  #   ports:
+  #     - "5174:5173"
+  #   volumes:
+  #     - ./clients/svelte:/app
+  #     - /app/node_modules
+  #   depends_on:
+  #     - backend
