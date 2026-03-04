@@ -1,6 +1,7 @@
 {
   "name": "xo-svelte-client",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite --host"
   },
