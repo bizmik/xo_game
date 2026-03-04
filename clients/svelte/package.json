@@ -1,0 +1,12 @@
+{
+  "name": "xo-svelte-client",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "svelte": "^4.2.0"
+  }
+}

@@ -17,12 +17,12 @@ services:
     depends_on:
       - backend
 
-  # svelte-client:
-  #   build: ./clients/svelte
-  #   ports:
-  #     - "5174:5173"
-  #   volumes:
-  #     - ./clients/svelte:/app
-  #     - /app/node_modules
-  #   depends_on:
-  #     - backend
+  svelte-client:
+    build: ./clients/svelte
+    ports:
+      - "5174:5173"
+    volumes:
+      - ./clients/svelte:/app
+      - /app/node_modules
+    depends_on:
+      - backend
